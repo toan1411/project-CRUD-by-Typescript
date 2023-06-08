@@ -11,7 +11,7 @@ export class Todos extends Model{
         allowNull: false,
         unique: true
     })
-    fullName!: string;
+    fullName! : string;
 
     @Column({
         type: DataType.STRING,

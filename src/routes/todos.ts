@@ -1,19 +1,13 @@
 import { Router } from "express";
 
-import {
-    createToDo,
-    deleteToDo,
-    getAllToDo,
-    updateToDo,
-    getTodoById
-}from "../controller/todo"
+const controller = require('../controller/todo')
 
 const router = Router();
 
-router.post("/", createToDo);
-router.get("/",getAllToDo);
-router.get("/:id",getTodoById);
-router.put("/:id",updateToDo);
-router.delete("/:id",deleteToDo)
+router.post("/", controller.createEmployee);
+router.get("/",controller.getAllEmployee);
+router.get("/:id",controller.getEmployeeById);
+router.put("/:id",controller.updateEmployee);
+router.delete("/:id",controller.deleteEmployee)
 
 export default router;

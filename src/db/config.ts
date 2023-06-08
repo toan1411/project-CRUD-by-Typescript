@@ -1,13 +1,12 @@
-import {Sequelize} from "sequelize-typescript"
+import { Sequelize } from "sequelize-typescript"
 import dotenv from "dotenv";
-
-import {Todos} from "../models/todos"
+import { Todos } from "../models/todos"
 
 dotenv.config();
 
 const connection = new Sequelize({
-    dialect: "mysql",
-    host: "localhost",
+    dialect:"mysql",
+    host: process.env.HOST,
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DB,
