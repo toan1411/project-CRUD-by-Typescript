@@ -2,12 +2,12 @@ import { RequestHandler } from "express";
 const service = require("../service/todos");
 
 
-const getAllEmployee: RequestHandler = async (req, res) => {
-    const allToDos = await service.getAllEmployee();
-    console.log(allToDos)
+const getAllEmployee: RequestHandler = async (req,res) => {
+    const allEmployee = await service.getAllEmployee(req.query);
+
     return res
     .status(200)
-    .json({ message: "Todo fetched successfully", data: allToDos })
+    .json({ message: "Todo fetched successfully",length:allEmployee.length , data: allEmployee })
 }
 
 const getEmployeeById: RequestHandler = async (req, res) => {

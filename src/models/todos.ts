@@ -11,11 +11,18 @@ export class Todos extends Model{
         allowNull: false,
         unique: true
     })
-    fullName! : string;
+    fullName!: string;
 
     @Column({
         type: DataType.STRING,
         allowNull: false
     })
     jobType!: string;
+
+    @Column({
+        type: DataType.NUMBER,
+        allowNull: false
+    })
+    age!: number; 
+
 }
