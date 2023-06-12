@@ -1,12 +1,10 @@
-//import { where } from "sequelize";
 import { Todos } from "../models/todos";
 
 const getAllEmployee = async (body: Object) => {
     let queryObj = {...body};
 
     const excludedFields: string[] = ['page', 'sort', 'limit','fields'];
-    excludedFields.forEach((el:string)=> delete (queryObj as { [key: string]: any })[el]);
-    console.log(body,queryObj);
+    excludedFields.forEach((el:string)=> delete (queryObj as any)[el]);
     let allEmployee = await Todos.findAll({where:queryObj});
     
 
